@@ -3,7 +3,7 @@
 /test/
 
 # top level source
-my-element.js
-my-element.js.map
-my-element.d.ts
-my-element.d.ts.map
+lit-country-dropdown.js
+lit-country-dropdown.js.map
+lit-country-dropdown.d.ts
+lit-country-dropdown.d.ts.map

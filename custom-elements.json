@@ -2,9 +2,9 @@
   "version": "experimental",
   "tags": [
     {
-      "name": "my-element",
-      "path": "./src/my-element.ts",
-      "description": "An example element.",
+      "name": "lit-country-dropdown",
+      "path": "./src/lit-country-dropdown.ts",
+      "description": "A dropdown to show country names with flags",
       "attributes": [
         {
           "name": "name",

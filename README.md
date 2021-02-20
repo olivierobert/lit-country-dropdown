@@ -1,6 +1,6 @@
-# LitElement TypeScript starter 
+# Country Dropdown Web Component
 
-This project includes a sample component using LitElement with TypeScript.
+Based on [this TypeScript Starter](https://github.com/PolymerLabs/lit-element-starter-ts), this project aims at discovering [LitElement](https://lit-element.polymer-project.org/guide/start) by building a custom Web component.
 
 ## Setup
 
@@ -40,7 +40,7 @@ npm test
 
 ## Dev Server
 
-This sample uses open-wc's [es-dev-server](https://github.com/open-wc/open-wc/tree/master/packages/es-dev-server) for previewing the project without additional build steps. ES dev server handles resolving Node-style "bare" import specifiers, which aren't supported in browsers. It also automatically transpiles JavaScript and adds polyfills to support older browsers.
+Preview the project with [es-dev-server](https://github.com/open-wc/open-wc/tree/master/packages/es-dev-server) additional build steps. ES dev server handles resolving Node-style "bare" import specifiers, which aren't supported in browsers. It also automatically transpiles JavaScript and adds polyfills to support older browsers.
 
 To run the dev server and open the project in a new browser tab:
 
@@ -48,7 +48,7 @@ To run the dev server and open the project in a new browser tab:
 npm run serve
 ```
 
-There is a development HTML file located at `/dev/index.html` that you can view at http://localhost:8000/dev/index.html.
+There is a development HTML file located at `/dev/index.html` that can be viewed at http://localhost:8000/dev/index.html.
 
 ## Editing
 
@@ -106,13 +106,3 @@ npm run docs:watch
 ```
 
 The site will usually be served at http://localhost:8000.
-
-## Bundling and minification
-
-This starter project doesn't include any build-time optimizations like bundling or minification. We recommend publishing components as unoptimized JavaScript modules, and performing build-time optimizations at the application level. This gives build tools the best chance to deduplicate code, remove dead code, and so on.
-
-For information on building application projects that include LitElement components, see [Build for production](https://lit-element.polymer-project.org/guide/build) on the LitElement site.
-
-## More information
-
-See [Get started](https://lit-element.polymer-project.org/guide/start) on the LitElement site for more information.
