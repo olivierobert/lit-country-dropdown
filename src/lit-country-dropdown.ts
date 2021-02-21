@@ -141,7 +141,7 @@ export class LitCountryDropdown extends LitElement {
 
         <div class="country-dropdown__popover ${!this.showPopover ? "country-dropdown__popover--hidden" : "" }">
           <ul class="country-dropdown__list">
-            <li class="country-dropdown__option" data-value="fr">
+            <li class="country-dropdown__option" data-value="fr" @click="${this._selectOption}">
               <div class="country-dropdown__flag">🇫🇷</div>
               <div class="country-dropdown__name">France</div>
               <div class="country-dropdown__icon">
@@ -150,7 +150,7 @@ export class LitCountryDropdown extends LitElement {
                 </svg>
               </div>
             </li>
-            <li class="country-dropdown__option" data-value="th">
+            <li class="country-dropdown__option" data-value="th" @click="${this._selectOption}">
               <div class="country-dropdown__flag">🇹🇭</div>
               <div class="country-dropdown__name">Thailand</div>
               <div class="country-dropdown__icon">
@@ -170,8 +170,13 @@ export class LitCountryDropdown extends LitElement {
     this.showPopover = !this.showPopover;
   }
 
-  foo(): string {
-    return 'foo';
+  private _selectOption(e: Event) {
+    let optionElement = e.currentTarget as HTMLElement;
+    let optionValue = optionElement.dataset.value as string;
+    let selectElement = this.shadowRoot!.querySelector('select') as HTMLSelectElement;
+
+    selectElement.value = optionValue;
+    this.showPopover = false;
   }
 }
 

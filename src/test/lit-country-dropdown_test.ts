@@ -167,4 +167,19 @@ suite('lit-country-dropdown', () => {
     `
     );
   });
+
+  test('selects the country option', async () => {
+    const el = (await fixture(html`<lit-country-dropdown></lit-country-dropdown>`)) as LitCountryDropdown;
+    const select = el.shadowRoot!.querySelector('select')!;
+    const button = el.shadowRoot!.querySelector('button')!;
+    const countyThOption = el.shadowRoot!.querySelector('.country-dropdown__option:nth-child(2)')! as HTMLElement;
+    
+    button.click();
+    await el.updateComplete;
+
+    countyThOption.click();
+    await el.updateComplete;
+
+    assert.equal(select.value, countyThOption.dataset.value);
+  });
 });
