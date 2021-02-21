@@ -171,9 +171,9 @@ export class LitCountryDropdown extends LitElement {
   }
 
   private _selectOption(e: Event) {
-    let optionElement = e.currentTarget as HTMLElement;
-    let optionValue = optionElement.dataset.value as string;
-    let selectElement = this.shadowRoot!.querySelector('select') as HTMLSelectElement;
+    const optionElement = e.currentTarget as HTMLElement;
+    const optionValue = optionElement.dataset.value as string;
+    const selectElement = this.shadowRoot!.querySelector('select') as HTMLSelectElement;
 
     selectElement.value = optionValue;
     this.showPopover = false;
