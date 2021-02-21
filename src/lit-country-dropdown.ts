@@ -113,6 +113,12 @@ export class LitCountryDropdown extends LitElement {
     }
   `;
 
+  @property({type: Array})
+  countries = [
+    {displayName: 'France', flag: '🇫🇷', isoCode: 'fr'}, 
+    {displayName: 'Thailand', flag: '🇹🇭', isoCode: 'th'}
+  ];
+
   @property({type: String})
   name = 'country';
 
@@ -141,24 +147,18 @@ export class LitCountryDropdown extends LitElement {
 
         <div class="country-dropdown__popover ${!this.showPopover ? "country-dropdown__popover--hidden" : "" }">
           <ul class="country-dropdown__list">
-            <li class="country-dropdown__option" data-value="fr" @click="${this._selectOption}">
-              <div class="country-dropdown__flag">🇫🇷</div>
-              <div class="country-dropdown__name">France</div>
+          ${this.countries.map(country =>  html`
+            <li class="country-dropdown__option" data-value="${country.isoCode}" @click="${this._selectOption}">
+              <div class="country-dropdown__flag">${country.flag}</div>
+              <div class="country-dropdown__name">${country.displayName}</div>
               <div class="country-dropdown__icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
               </div>
             </li>
-            <li class="country-dropdown__option" data-value="th" @click="${this._selectOption}">
-              <div class="country-dropdown__flag">🇹🇭</div>
-              <div class="country-dropdown__name">Thailand</div>
-              <div class="country-dropdown__icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-            </li>
+            `
+            )}
           </ul>
         </div>
         <slot></slot>
